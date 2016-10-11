@@ -1,0 +1,124 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+<title>Fitness Tools by Carrie Schwalbe - Belly Dance, Personal Training, SharQui</title>
+
+<meta name="Description" content="Free fitness calculation tools.">
+<meta name="Keywords" content="BMI, body mass index, heart rate, THR, target">
+
+<link rel="stylesheet" type="text/css" href="CSS/FitnessToolStyle.css" />
+
+<style type="text/css"> 
+</style>
+
+</head>
+
+<body>
+<p id="testParagraph"> is this working?</p>
+
+<select id="pickTool">
+   <option value="none">(Select a Tool)</option>
+   <option value="BMI">BMI (Body Mass Index)</option>
+   <option value="HRR">Heart Rate Ranges</option>
+   <option value="bodyFatMale">Percentage Body Fat (Male)</option>
+   <option value="bodyFatFemale">Percentage Body Fat (Female)</option>
+   <option value="WHR">WHR (Waist to Hip Ratio)</option>
+</select>
+
+<div id="FitnessToolForm">
+   <div id="feetBox" class="anInput" style="display:none">
+      <p class="aLabel" >Feet: <input id="feet" type="text"></input>
+      </p>
+   </div>
+   <div id="inchesBox" class="anInput" style="display:none">
+      <p class="aLabel" >Inches: <input id="inches" type="text"></input>
+      </p>
+   </div>
+   <div id="poundsBox" class="anInput" style="display:none">
+      <p class="aLabel" >Pounds: <input id="pounds" type="text"></input>
+      </p>
+   </div>
+   <div id="ageBox" class="anInput" style="display:none">
+      <p class="aLabel" >Age: <input id="age" type="text"></input>
+      </p>
+   </div>
+   <div id="waistBox" class="anInput" style="display:none">
+      <p class="aLabel" >Waist: <input id="waist" type="text"></input>
+      </p>
+   </div>
+   <div id="hipsBox" class="anInput" style="display:none">
+      <p class="aLabel" >Hips: <input id="hips" type="text"></input>
+      </p>
+   </div>
+   <div id="iliacBox" class="anInput" style="display:none">
+      <p class="aLabel" >Iliac: <input id="iliac" type="text"></input>
+      </p>
+   </div>
+</div>
+
+<div id="ToolPreCalcText">
+   <p id="pre_none" style="display:none">(no pre text)</p>
+   <p id="pre_BMI" style="display:none">pre BMI text</p>
+   <p id="pre_HRR" style="display:none">pre HRR text</p>
+   <p id="pre_bodyFatMale" style="display:none">pre bodyFatMale text</p>
+   <p id="pre_bodyFatFemale" style="display:none">pre bodyFatFemale text</p>
+   <p id="pre_WHR" style="display:none">pre WHR text</p>
+</div>
+
+<div id="ToolAnswerText">
+   <p id="ans_none" style="display:none">(no answer text)></p>
+   <p id="ans_BMI" style="display:none" class="resultText">Your BMI is <span id="myBMI" class="inlineAnswer"></span>.</p>
+   <p id="ans_HRR" style="display:none" class="resultText">
+      Your maximum heart rate is <span id="maxHR" class="inlineAnswer"></span>. <br />
+      Your zone 1 heart rate range is <span id="minHR1" class="inlineAnswer"></span> to <span id="maxHR1"></span>. <br />
+      Your zone 2 heart rate range is <span id="minHR2" class="inlineAnswer"></span> to <span id="maxHR2"></span>. <br />
+      Your zone 3 heart rate range is <span id="minHR3" class="inlineAnswer"></span> to <span id="maxHR3"></span>. <br />
+   </p>
+   <p id="ans_bodyFatMale" style="display:none" class="resultText">
+            You have approximately <span id="myManFat" class="inlineAnswer"></span> percent body fat.</p>
+   <p id="ans_bodyFatFemale" style="display:none" class="resultText">
+            You have approximately <span id="myWomanFat" class="inlineAnswer"></span> percent body fat.</p>
+   <p id="ans_WHR" style="display:none" class="resultText">
+            Your waist-to-hip ratio is approximately <span id="myWHR" class="inlineAnswer"></span>.</p>
+</div>
+
+<div id="ToolPostCalcText">
+   <p id="post_none" style="display:none">(no post text)</p>
+   <p id="post_BMI" style="display:none">post BMI text</p>
+   <p id="post_HRR" style="display:none">post HRR text</p>
+   <p id="post_bodyFatMale" style="display:none">post bodyFatMale text</p>
+   <p id="post_bodyFatFemale" style="display:none">post bodyFatFemale text</p>
+   <p id="post_WHR" style="display:none">post WHR text</p>
+</div>
+
+<div id="ToolGraphics">
+   <div id="pic_none" style:"display:none"> pic none </div>
+   <div id="pic_BMI" class="barChartHolder" style:"display:none"> 
+      <img src="images/myGraphics/BMIimage.png" class="barChart" />
+      <img id="BMIMark" src="images/myGraphics/VertMarkerRed.png" class="myMarker" />
+   </div>
+   <div id="pic_HRR" style:"display:none"> pic HRR </div>
+   <div id="pic_bodyFatMale" class="barChartHolder" style:"display:none"> 
+      <img src="images/myGraphics/BodyFatImage.png" class="barChart" />
+      <img id="bodyFatMaleMark" src="images/myGraphics/VertMarkerDkRed.png" class="myMarker" />
+   </div>
+   <div id="pic_bodyFatFemale" class="barChartHolder" style:"display:none">
+      <img src="images/myGraphics/BodyFatImage.png" class="barChart" />
+      <img id="bodyFatFemaleMark" src="images/myGraphics/VertMarkerDkRed.png" class="myMarker" /> 
+   </div>
+   <div id="pic_WHR" style:"display:none"> pic WHR</div>
+</div>
+
+<button id="clearValues" type="button" >Clear</button>
+<button id="runCalculation" type="button" >Calculate</button>
+
+
+<script src="../scripts/FitnessTools.js">
+</script>
+
+
+</body>
+
+</html>

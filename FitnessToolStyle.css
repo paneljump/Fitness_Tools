@@ -1,0 +1,78 @@
+div#ToolPreCalcText p {
+      font-family: Arial; 
+      font-weight: normal;
+      font-size: 12px; 
+}
+
+div#ToolPostCalcText p {
+      font-family: Arial; 
+      font-weight: normal;
+      font-size: 12px;
+}
+
+div#ToolAnswerText p {
+      font-family: Arial; 
+      font-weight: normal;
+      font-size: 12px;
+}
+
+div#FitnessToolForm {
+      border: 1px solid;
+      border-radius: 5px;
+      width: 250px;
+}
+
+div#FitnessToolForm p {
+      font-family: Arial; 
+      font-weight: normal;
+      font-size: 14px;
+      margin-left: 10px;
+      margin-top: 8px;
+}
+
+div#ToolGraphics p {
+      font-family: Arial; 
+      font-weight: normal;
+      font-size: 12px;
+}
+
+input {
+      float: right;
+      margin-right: 10px;
+}
+
+.inlineAnswer {
+      font-weight: bold;
+      color:#832c64;
+}
+
+.barChart {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      height: 150px;
+      width: 600px;
+      display: block;
+      z-index: 1;
+}
+
+.barChartHolder {
+      position: relative;
+      margin-right: auto;
+      margin-left: auto;
+      border: 0px;
+      display: none;
+      height: 150px;
+      width: 600px;
+      z-index: 1;
+}
+
+.myMarker {
+      position: absolute;
+      top: 25px;
+      // left: 100px;
+      height: 100px;
+      width: 20px;
+      display: block;
+      z-index: 2;
+}
